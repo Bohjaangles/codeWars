@@ -12,16 +12,11 @@ Note: for this kata y isn't considered a vowel.
 
 // my solution:
 function disemvowel(str) {
-  const strArr = str.split(' ')
-  
-  const res = strArr.map(word => {
-    const charArr = word.split('')
-    return charArr.filter(char => {
-      char !== 'a' || char !== 'e' || char !== 'i' || char !== "o" || char !== 'u'
-    }).join('')
-  })
-  console.log(res)
-  return res.join(' ')
+  let res = ''
+  for(let i = 0; i < str.length; i++){
+    const char = str[i].toLowerCase()
+    if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') continue
+    res += str[i]
+  }
+  return res
 }
-
-// https://www.codewars.com/kata/52fba66badcd10859f00097e/train/javascript
